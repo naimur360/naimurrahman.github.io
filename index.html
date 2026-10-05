@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naimur Rahman | Video Editor & Cinematographer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: #080808;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 8%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: #ffffff;
+      text-transform: lowercase;
+    }
+
+    .nav-pill {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 24px;
+      border-radius: 30px;
+      display: flex;
+      gap: 20px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .nav-pill a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-pill a:hover {
+      color: #ff5500;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      padding: 140px 8% 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: clamp(60px, 12vw, 150px);
+      font-weight: 800;
+      letter-spacing: -3px;
+      line-height: 0.9;
+      margin-bottom: 20px;
+      text-transform: lowercase;
+    }
+
+    .hero-subtitle-container {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      max-width: 1100px;
+    }
+
+    /* Arch Shaped Card */
+    .arch-card {
+      background: #121212;
+      border-radius: 120px 120px 20px 20px;
+      padding: 30px 25px;
+      width: 280px;
+      text-align: center;
+      border: 1px solid #222;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .arch-card .number {
+      font-size: 48px;
+      font-weight: 800;
+      color: #ff5500;
+      margin-bottom: 5px;
+    }
+
+    .arch-card p {
+      font-size: 13px;
+      color: #888;
+    }
+
+    .hero-banner-img {
+      width: 340px;
+      height: 420px;
+      border-radius: 180px;
+      object-fit: cover;
+      border: 2px solid #ff5500;
+    }
+
+    .hero-description {
+      max-width: 320px;
+      text-align: left;
+    }
+
+    .hero-description p {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn-orange {
+      background: #ff5500;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-orange:hover {
+      background: #e04a00;
+      box-shadow: 0 0 25px rgba(255, 85, 0, 0.4);
+    }
+
+    /* Feature Grid Section (Who We Are) */
+    .section {
+      padding: 100px 8%;
+    }
+
+    .section-head {
+      font-size: clamp(40px, 8vw, 90px);
+      font-weight: 800;
+      line-height: 0.95;
+      margin-bottom: 50px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      padding: 40px 30px;
+      border-radius: 120px 120px 0 0;
+      text-align: center;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-white {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .card-orange {
+      background: #ff5500;
+      color: #ffffff;
+    }
+
+    .card-black {
+      background: #121212;
+      border: 1px solid #222;
+      color: #ffffff;
+    }
+
+    .feature-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    /* Works / Showcase */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .work-item {
+      background: #121212;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #222;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .work-info {
+      padding: 20px;
+    }
+
+    .work-info h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .work-info p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* Footer / Contact */
+    footer {
+      background: #000;
+      padding: 80px 8% 40px;
+      text-align: center;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    footer h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      color: #666;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-subtitle-container {
+        flex-direction: column;
+      }
+      .hero-banner-img {
+        width: 260px;
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">naimur.</div>
+    <div class="nav-pill">
+      <a href="#about">Home</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <h1 class="hero-title">naimur rahman</h1>
+    
+    <div class="hero-subtitle-container">
+      <!-- Arch Experience Card -->
+      <div class="arch-card">
+        <div class="number">8+</div>
+        <p>Years of professional experience in video editing & cinematography</p>
+      </div>
+
+      <!-- Main Profile Image -->
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Naimur Rahman" class="hero-banner-img">
+
+      <!-- Text Description -->
+      <div class="hero-description">
+        <p>A passionate Video Editor & Cinematographer specializing in commercial videos, music videos, and cinematic story-telling.</p>
+        <a href="#contact" class="btn-orange">contact me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Cards (Who We Are Style) -->
+  <section class="section">
+    <h2 class="section-head">my core<br>skills</h2>
+    <div class="feature-grid">
+      <div class="feature-card card-white">
+        <h3>cinematography</h3>
+        <p>High-end camera operation, lighting design & shot planning.</p>
+      </div>
+      <div class="feature-card card-orange">
+        <h3>color grading</h3>
+        <p>Professional color correction & cinematic look creation.</p>
+      </div>
+      <div class="feature-card card-black">
+        <h3>video editing</h3>
+        <p>Pacing, sound design, cutting & visual story assembly.</p>
+      </div>
+      <div class="feature-card card-white">
+        <h3>vfx & motion</h3>
+        <p>Clean transitions, motion graphics & dynamic visual effects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="section" id="works">
+    <h2 class="section-head">selected<br>projects</h2>
+    <div class="works-grid">
+      
+      <!-- Video Item 1 -->
+      <div class="work-item">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        </div>
+        <div class="work-info">
+          <h4>Showreel 2026</h4>
+          <p>Cinematography & Color Grading</p>
+        </div>
+      </div>
+
+      <!-- Video Item 2 -->
+      <div class="work-item">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        </div>
+        <div class="work-info">
+          <h4>Commercial Brand Film</h4>
+          <p>Direction & Post-Production</p>
+        </div>
+      </div>
+
+      <!-- Video Item 3 -->
+      <div class="work-item">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        </div>
+        <div class="work-info">
+          <h4>Music Video</h4>
+          <p>Editing & VFX</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact & Footer -->
+  <footer id="contact">
+    <h2>let's build something<br>great together.</h2>
+    <a href="mailto:your-email@gmail.com" class="btn-orange" style="margin-top: 20px;">send an email</a>
+    <p>&copy; 2026 Naimur Rahman. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
