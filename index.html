@@ -1,394 +1,397 @@
-<img src="profile.jpg.png" alt="Headshot Image">
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Naimur Rahman | Video Editor & Cinematographer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>NAIMUR RAHMAN — Video Editor & Cinematographer</title>
   <style>
+    :root {
+      --bg-color: #0b0b0b;
+      --card-bg: #161616;
+      --accent: #ff6b00;
+      --text: #ffffff;
+      --text-muted: #a0a0a0;
+      --border: #262626;
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background-color: #080808;
-      color: #ffffff;
-      overflow-x: hidden;
+      background-color: var(--bg-color);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    /* Navbar */
-    header {
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(11, 11, 11, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 25px 8%;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8, 8, 8, 0.8);
-      backdrop-filter: blur(10px);
     }
 
     .logo {
-      font-size: 28px;
       font-weight: 800;
-      letter-spacing: -1px;
-      color: #ffffff;
-      text-transform: lowercase;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      color: var(--text);
     }
 
-    .nav-pill {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 8px 24px;
-      border-radius: 30px;
+    .logo span { color: var(--accent); }
+
+    .nav-links {
       display: flex;
-      gap: 20px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      gap: 1.5rem;
+      list-style: none;
     }
 
-    .nav-pill a {
-      color: #ccc;
+    .nav-links a {
+      color: var(--text-muted);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: 0.3s;
+      font-size: 0.9rem;
+      transition: color 0.3s;
     }
 
-    .nav-pill a:hover {
-      color: #ff5500;
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     /* Hero Section */
     .hero {
       min-height: 100vh;
-      padding: 140px 8% 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero-title {
-      font-size: clamp(60px, 12vw, 150px);
-      font-weight: 800;
-      letter-spacing: -3px;
-      line-height: 0.9;
-      margin-bottom: 20px;
-      text-transform: lowercase;
-    }
-
-    .hero-subtitle-container {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-      max-width: 1100px;
-    }
-
-    /* Arch Shaped Card */
-    .arch-card {
-      background: #121212;
-      border-radius: 120px 120px 20px 20px;
-      padding: 30px 25px;
-      width: 280px;
-      text-align: center;
-      border: 1px solid #222;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-
-    .arch-card .number {
-      font-size: 48px;
-      font-weight: 800;
-      color: #ff5500;
-      margin-bottom: 5px;
-    }
-
-    .arch-card p {
-      font-size: 13px;
-      color: #888;
-    }
-
-    .hero-banner-img {
-      width: 340px;
-      height: 420px;
-      border-radius: 180px;
-      object-fit: cover;
-      border: 2px solid #ff5500;
-    }
-
-    .hero-description {
-      max-width: 320px;
-      text-align: left;
-    }
-
-    .hero-description p {
-      font-size: 14px;
-      color: #aaa;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .btn-orange {
-      background: #ff5500;
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      transition: 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-orange:hover {
-      background: #e04a00;
-      box-shadow: 0 0 25px rgba(255, 85, 0, 0.4);
-    }
-
-    /* Feature Grid Section (Who We Are) */
-    .section {
-      padding: 100px 8%;
-    }
-
-    .section-head {
-      font-size: clamp(40px, 8vw, 90px);
-      font-weight: 800;
-      line-height: 0.95;
-      margin-bottom: 50px;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .feature-card {
-      padding: 40px 30px;
-      border-radius: 120px 120px 0 0;
-      text-align: center;
-      min-height: 220px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      padding: 0 10%;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.08) 0%, transparent 50%);
     }
 
-    .card-white {
-      background: #ffffff;
-      color: #000000;
-    }
-
-    .card-orange {
-      background: #ff5500;
-      color: #ffffff;
-    }
-
-    .card-black {
-      background: #121212;
-      border: 1px solid #222;
-      color: #ffffff;
-    }
-
-    .feature-card h3 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .feature-card p {
-      font-size: 13px;
-      opacity: 0.8;
-    }
-
-    /* Works / Showcase */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .work-item {
-      background: #121212;
+    .hero .badge {
+      background: rgba(255, 107, 0, 0.15);
+      color: var(--accent);
+      padding: 6px 14px;
       border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid #222;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--accent);
     }
 
-    .video-wrapper {
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      font-weight: 900;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #e05e00;
+    }
+
+    /* Sections General */
+    section {
+      padding: 5rem 10%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
       position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
     }
 
-    .video-wrapper iframe {
+    .section-title::after {
+      content: '';
       position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    /* Works / Projects Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-tag {
+      color: var(--accent);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    /* Services & Tools */
+    .services-grid, .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-box, .skill-box {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-box span {
+      display: inline-block;
+      background: rgba(255, 107, 0, 0.1);
+      color: var(--accent);
+      padding: 4px 10px;
+      margin: 4px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
     }
 
-    .work-info {
-      padding: 20px;
+    .modal-content {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 500px;
+      width: 90%;
+      border: 1px solid var(--accent);
+      position: relative;
     }
 
-    .work-info h4 {
-      font-size: 18px;
-      margin-bottom: 5px;
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
-    .work-info p {
-      color: #777;
-      font-size: 13px;
-    }
-
-    /* Footer / Contact */
+    /* Footer */
     footer {
-      background: #000;
-      padding: 80px 8% 40px;
       text-align: center;
-      border-top: 1px solid #1a1a1a;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
     }
 
-    footer h2 {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    footer p {
-      color: #666;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-
+    /* Responsive */
     @media (max-width: 768px) {
-      .hero-subtitle-container {
-        flex-direction: column;
-      }
-      .hero-banner-img {
-        width: 260px;
-        height: 320px;
-      }
+      .hero h1 { font-size: 2.2rem; }
+      .nav-links { display: none; }
+      section { padding: 3rem 5%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">naimur.</div>
-    <div class="nav-pill">
-      <a href="#about">Home</a>
-      <a href="#works">Works</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </header>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">NAIMUR<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="about">
-    <h1 class="hero-title">naimur rahman</h1>
-    
-    <div class="hero-subtitle-container">
-      <!-- Arch Experience Card -->
-      <div class="arch-card">
-        <div class="number">8+</div>
-        <p>Years of professional experience in video editing & cinematography</p>
+  <section class="hero">
+    <div class="badge">🔥 8+ Years Experience</div>
+    <h1>NAIMUR RAHMAN<br><span>VIDEO EDITOR</span> × CINEMATOGRAPHER</h1>
+    <p>Crafting high-impact visual stories, high-converting reels, motion graphics, and cinematic wedding videos.</p>
+    <a href="#works" class="btn">View Selected Works</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p style="color: var(--text-muted); max-width: 800px;">
+      With over 8 years of professional experience in video editing and cinematography, I specialize in transforming raw footage into engaging visual narratives. From fast-paced social media reels to emotional wedding films and complex motion graphics, I bring creative vision and technical precision to every frame.
+    </p>
+  </section>
+
+  <!-- Selected Works -->
+  <section id="works">
+    <h2 class="section-title">Selected Works</h2>
+    <div class="grid">
+      <div class="card" onclick="openModal('Reels Showcase', 'High-energy, fast-paced Instagram and TikTok video edits designed for high retention.')">
+        <div class="card-body">
+          <div class="card-tag">Social Media</div>
+          <h3 class="card-title">Reels & Shorts</h3>
+        </div>
       </div>
-
-      <!-- Main Profile Image -->
-      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Naimur Rahman" class="hero-banner-img">
-
-      <!-- Text Description -->
-      <div class="hero-description">
-        <p>A passionate Video Editor & Cinematographer specializing in commercial videos, music videos, and cinematic story-telling.</p>
-        <a href="#contact" class="btn-orange">contact me</a>
+      <div class="card" onclick="openModal('Motion Graphics', 'Custom 2D/3D motion design, lower thirds, titles, and logo animations.')">
+        <div class="card-body">
+          <div class="card-tag">Animation</div>
+          <h3 class="card-title">Motion Graphics</h3>
+        </div>
+      </div>
+      <div class="card" onclick="openModal('Pre-Wedding Films', 'Cinematic pre-wedding stories with professional color grading and sound design.')">
+        <div class="card-body">
+          <div class="card-tag">Cinematography</div>
+          <h3 class="card-title">Pre-Wedding Video</h3>
+        </div>
+      </div>
+      <div class="card" onclick="openModal('Wedding Highlights', 'Emotional and elegant full wedding video edits.')">
+        <div class="card-body">
+          <div class="card-tag">Full Edit</div>
+          <h3 class="card-title">Wedding Video</h3>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Feature Cards (Who We Are Style) -->
-  <section class="section">
-    <h2 class="section-head">my core<br>skills</h2>
-    <div class="feature-grid">
-      <div class="feature-card card-white">
-        <h3>cinematography</h3>
-        <p>High-end camera operation, lighting design & shot planning.</p>
+  <!-- Services -->
+  <section id="services">
+    <h2 class="section-title">Services</h2>
+    <div class="services-grid">
+      <div class="service-box">
+        <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Video Editing</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Commercial, social media, documentary, and event edits.</p>
       </div>
-      <div class="feature-card card-orange">
-        <h3>color grading</h3>
-        <p>Professional color correction & cinematic look creation.</p>
+      <div class="service-box">
+        <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Cinematography</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">On-location video production and creative direction.</p>
       </div>
-      <div class="feature-card card-black">
-        <h3>video editing</h3>
-        <p>Pacing, sound design, cutting & visual story assembly.</p>
-      </div>
-      <div class="feature-card card-white">
-        <h3>vfx & motion</h3>
-        <p>Clean transitions, motion graphics & dynamic visual effects.</p>
+      <div class="service-box">
+        <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Color Grading</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Professional cinematic look development using DaVinci Resolve.</p>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section class="section" id="works">
-    <h2 class="section-head">selected<br>projects</h2>
-    <div class="works-grid">
-      
-      <!-- Video Item 1 -->
-      <div class="work-item">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-        </div>
-        <div class="work-info">
-          <h4>Showreel 2026</h4>
-          <p>Cinematography & Color Grading</p>
-        </div>
+  <!-- Tools & Skills -->
+  <section id="skills">
+    <h2 class="section-title">Tools & Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h4 style="margin-bottom: 0.5rem;">Software</h4>
+        <span>Adobe Premiere Pro</span>
+        <span>After Effects</span>
+        <span>DaVinci Resolve</span>
+        <span>Photoshop</span>
       </div>
-
-      <!-- Video Item 2 -->
-      <div class="work-item">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-        </div>
-        <div class="work-info">
-          <h4>Commercial Brand Film</h4>
-          <p>Direction & Post-Production</p>
-        </div>
+      <div class="skill-box">
+        <h4 style="margin-bottom: 0.5rem;">Core Expertise</h4>
+        <span>Color Grading</span>
+        <span>Sound Design</span>
+        <span>Storytelling</span>
+        <span>Motion Design</span>
       </div>
-
-      <!-- Video Item 3 -->
-      <div class="work-item">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-        </div>
-        <div class="work-info">
-          <h4>Music Video</h4>
-          <p>Editing & VFX</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Contact & Footer -->
-  <footer id="contact">
-    <h2>let's build something<br>great together.</h2>
-    <a href="mailto:your-email@gmail.com" class="btn-orange" style="margin-top: 20px;">send an email</a>
-    <p>&copy; 2026 Naimur Rahman. All rights reserved.</p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Ready to bring your video project to life? Let's work together.</p>
+    <a href="mailto:your-email@example.com" class="btn">Send Email</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 NAIMUR RAHMAN. All rights reserved.</p>
   </footer>
 
+  <!-- Modal Popup -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle" style="color: var(--accent); margin-bottom: 1rem;">Project Title</h3>
+      <p id="modalDesc" style="color: var(--text-muted);">Project Description</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, desc) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('projectModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('projectModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
